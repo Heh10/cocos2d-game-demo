@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cocos2d-JS</title>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="450"></canvas>
+    <script type="text/javascript" src="src/cocos2d-js-v3.9-lite.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+          window.onload = function(){
+              cc.game.onStart = function(){
+                  //load resources
+                  cc.LoaderScene.preload(g_resources, function () {
+                      cc.director.runScene(new StartScene());
+                      cc.view.setDesignResolutionSize(375, 667, cc.ResolutionPolicy.SHOW_ALL);
+                  }, this);
+              };
+              cc.game.run("gameCanvas");
+          };
+    </script>
+</body>
+</html>
